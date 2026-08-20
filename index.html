@@ -214,10 +214,88 @@
       .nav-wrapper.nav-hidden {
         transform: translateY(-130%);
       }
+
+      #page-loader {
+        transition: opacity 0.4s ease;
+      }
+
+      .loader-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(33, 107, 102, 0.15);
+        border-top-color: var(--color-primary);
+        border-radius: 50%;
+        animation: loader-spin 0.7s linear infinite;
+      }
+
+      @keyframes loader-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
 
   <body>
+    <div
+      id="page-loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-neutral-light"
+    >
+      <div class="loader-spinner"></div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var loader = document.getElementById("page-loader");
+        var heroVideo = document.getElementById("hero-video");
+        var windowLoaded = false;
+        var videoReady = !heroVideo;
+
+        function hideLoader() {
+          if (!loader) return;
+          loader.style.opacity = "0";
+          setTimeout(function () {
+            loader.style.display = "none";
+          }, 400);
+        }
+
+        function tryHide() {
+          if (windowLoaded && videoReady) hideLoader();
+        }
+
+        if (heroVideo) {
+          if (heroVideo.readyState >= 3) {
+            videoReady = true;
+          } else {
+            heroVideo.addEventListener(
+              "canplay",
+              function () {
+                videoReady = true;
+                tryHide();
+              },
+              { once: true }
+            );
+            heroVideo.addEventListener(
+              "error",
+              function () {
+                videoReady = true;
+                tryHide();
+              },
+              { once: true }
+            );
+          }
+        }
+
+        window.addEventListener("load", function () {
+          windowLoaded = true;
+          tryHide();
+        });
+
+        setTimeout(function () {
+          videoReady = true;
+          tryHide();
+        }, 6000);
+      });
+    </script>
     <div class="root">
     
 
@@ -501,6 +579,7 @@
           <!-- <img class="w-full h-full object-cover" src="https://images.prismic.io/gielly-green/aRR8P7pReVYa4YO4_gielly-green-ourethos_cover.jpg?auto=format,compress?auto=compress,format" alt=""> -->
 
           <video
+            id="hero-video"
             autoplay
             loop
             muted
