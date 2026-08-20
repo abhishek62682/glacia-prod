@@ -1,0 +1,1349 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glacia | Home Page</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet" />
+
+  <style type="text/tailwindcss">
+    @theme {
+        --color-primary: #216b66; /* Deep Teal */
+        --color-secondary: #c9a66b; /* Champagne Gold */
+        --color-neutral-light: #f7f3ee; /* Warm Ivory */
+        --color-neutral-dark: #142421; /* Deep Dark */
+        --font-primary: "Libre Baskerville", serif;
+        --font-secondary: "Geist", sans-serif;
+        --font-creative: "Alex Brush", cursive;
+      }
+
+      body {
+        background-color: var(--color-neutral-light);
+        font-family: var(--font-secondary);
+      }
+
+      .container {
+        max-width: 1440px;
+        margin-inline: auto;
+        padding-inline: 20px;
+      }
+
+      .swiper-slide.swiper-slide-active {
+        scale: 1;
+      }
+
+      .swiper-slide {
+        scale: 0.7;
+      }
+      .swiper-slide.swiper-slide-active .servies h3 {
+        display: block;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: var(--color-primary) !important;
+        padding: 24px !important;
+        height: 64px !important;
+        width: 100px !important;
+        background-color: var(--color-neutral-light) !important;
+        border-radius: 100px !important;
+        border: 1px solid var(--color-secondary) !important;
+      }
+
+      @media (max-width: 767px) {
+        .swiper-button-prev,
+        .swiper-button-next {
+          padding: 10px !important;
+          height: 36px !important;
+          width: 48px !important;
+        }
+
+        .swiper-button-prev svg,
+        .swiper-button-next svg {
+          width: 22px;
+          height: 10px;
+        }
+
+        .centered-slider .swiper-button-prev,
+        .centered-slider .swiper-button-next {
+          top: 217px !important;
+          bottom: auto !important;
+          margin-top: 0 !important;
+          transform: none !important;
+        }
+
+        .centered-slider .swiper-button-prev {
+          left: 16px !important;
+          right: auto !important;
+        }
+
+        .centered-slider .swiper-button-next {
+          right: 16px !important;
+          left: auto !important;
+        }
+      }
+
+      .centered-slider .swiper-button-prev {
+        right: 79% !important;
+        left: auto !important;
+        transform: translateX(50%);
+      }
+
+      .centered-slider .swiper-button-next {
+        left: 79% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+      }
+
+      .servies {
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .servies img {
+        border-radius: 16px;
+      }
+      .servies h3 {
+        font-size: 25px;
+        line-height: 30px;
+        color: #fff;
+        margin-top: 20px;
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          padding-inline: 32px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          padding-inline: 48px;
+        }
+      }
+.img-clip-path {
+          border-radius: 220px 0px 220px 0px;
+        }
+      
+
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-frame {
+        width: 100%;
+        height: 120px;
+        border-radius: 0px;
+        background-color: rgba(255, 255, 255, 0);
+        transition: height 0.5s ease, border-radius 0.5s ease,
+          background-color 0.5s ease;
+      }
+
+      .nav-frame.nav-scrolled {
+        height: 80px;
+        border-radius: 100px;
+        background-color: rgba(255, 255, 255, 0.96);
+      }
+
+      .nav-frame.nav-scrolled .nav-right,
+      .nav-frame.nav-scrolled .nav-right a {
+        color: var(--color-neutral-dark) !important;
+      }
+
+      .menu-overlay {
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.45s ease, visibility 0s linear 0.45s;
+      }
+
+      .menu-overlay.menu-open {
+        visibility: visible;
+        transform: translateX(0);
+        transition: transform 0.45s ease, visibility 0s linear 0s;
+      }
+
+      body.menu-locked {
+        overflow: hidden;
+      }
+
+      .nav-wrapper {
+        transform: translateY(0);
+        transition: transform 0.4s ease;
+      }
+
+      .nav-wrapper.nav-hidden {
+        transform: translateY(-130%);
+      }
+
+
+
+   
+    </style>
+</head>
+
+<body>
+  <div class="root">
+
+    <div id="nav-wrapper" class="nav-wrapper flex justify-center w-full h-[120px] fixed top-0 left-0 z-[999] items-center px-4 sm:px-8 lg:px-15">
+
+      <div
+        class="nav-frame items-center flex justify-between px-2"
+      >
+        <div class="nav-left order-2 sm:order-1 flex-1 flex items-center justify-end sm:justify-start gap-[15px]">
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="menu-overlay"
+            class="hamburger bg-white px-3 sm:px-5 rounded-[30px] flex gap-[6px] items-center h-[40px]"
+          >
+            <i class="ri-menu-line text-neutral-dark text-[20px] shrink-0"></i>
+
+            <span
+              class="text-[14px] text-neutral-dark leading-[18px] uppercase font-medium"
+              >Menu</span
+            >
+          </button>
+        </div>
+
+        <div class="nav-middle order-1 sm:order-2">
+          <img class="w-[44px] sm:w-[60px]" src="./logo.png" alt="" />
+        </div>
+
+        <div class="nav-right hidden sm:flex sm:order-3 flex-1 justify-end items-center">
+          <a
+            href="tel:+919892187656"
+            aria-label="Book Appointment"
+            style="background: linear-gradient(21.8deg, #e7bf88 14.29%, #fff2cd 43.8%, #e7bf88 54.46%, #ffdd9d 62.82%, #e7bf88 85.71%);"
+            class="hamburger group px-3 sm:px-5 overflow-hidden rounded-[30px] flex gap-[6px] overflow-hidden flex items-center transition-[max-width] duration-300 ease-in-out h-[40px]"
+          >
+            <i class="ri-calendar-check-line text-neutral-dark text-[18px] shrink-0"></i>
+
+            <span
+              class="text-[14px] text-neutral-dark leading-[18px] uppercase font-medium"
+              >Book Appointment</span
+            >
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="menu-overlay"
+      class="menu-overlay fixed top-0 left-0 h-full w-full lg:w-1/2 xl:w-[45%] z-[1001] bg-neutral-dark text-neutral-light overflow-y-auto"
+      aria-hidden="true">
+
+        <button
+           id="menu-close" 
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="menu-overlay"
+            class="hamburger bg-white group absolute top-8 right-8 px-5 overflow-hidden rounded-[30px] flex max-w-[70px] gap-[6px] overflow-hidden flex items-center transition-[max-width] duration-300 ease-in-out hover:max-w-[120px] h-[40px]"
+          >
+                    <i class="ri-close-line text-neutral-dark text-2xl"></i>
+
+            <span
+              class="text-[14px] text-neutral-dark opacity-0 transition-opacity group-hover:opacity-100 leading-[18px] uppercase font-medium"
+              >Close</span
+            >
+          </button>
+      <div class="px-8 sm:px-14 lg:px-16 pt-28 pb-16 space-y-12">
+        <div class="grid grid-cols-[100px_1fr] sm:grid-cols-[140px_1fr] gap-x-6">
+          <h4 class="text-[13px] text-white uppercase  pt-1">Salon</h4>
+          <ul class="space-y-4 text-[18px] leading-[20px] sm:text-[15px]  ">
+            <li><a href="#home" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Home</a></li>
+            <li><a href="#about" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Our Story</a></li>
+            <li><a href="#services" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Services</a></li>
+            <li><a href="#gallery" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Gallery</a></li>
+            <li><a href="#why-us" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Why Choose Us</a></li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-[100px_1fr] sm:grid-cols-[140px_1fr] gap-x-6">
+          <h4 class="text-[13px] text-white uppercase  pt-1">Locations</h4>
+          <ul class="space-y-4 text-[18px] leading-[20px] sm:text-[15px]">
+            <li><a href="#contact" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Kharghar</a></li>
+            <li><a href="#contact" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">CBD Belapur</a></li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-[100px_1fr] sm:grid-cols-[140px_1fr] gap-x-6">
+          <h4 class="text-[13px] text-white uppercase  pt-1">Connect</h4>
+          <ul class="space-y-4 text-[18px] leading-[20px] sm:text-[15px]">
+            <li><a href="#contact" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Contact Us</a></li>
+            <li><a href="tel:+919892187656" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Book an
+                Appointment</a></li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-[100px_1fr] sm:grid-cols-[140px_1fr] gap-x-6">
+          <h4 class="text-[13px] text-white uppercase  pt-1">Social</h4>
+          <ul class="space-y-4 text-[18px] leading-[20px] sm:text-[15px]">
+            <li><a href="https://www.instagram.com/glacialadiessalon/" target="_blank" rel="noopener noreferrer"
+                class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer"
+                class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Facebook</a></li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-[100px_1fr] sm:grid-cols-[140px_1fr] gap-x-6">
+          <h4 class="text-[13px] text-white uppercase  pt-1">Info</h4>
+          <ul class="space-y-4 text-[18px] leading-[20px] sm:text-[15px]">
+            <li><a href="#" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Privacy Policy</a></li>
+            <li><a href="#" class="menu-link relative inline-block hover:text-secondary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Terms and Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="home" class="w-full flex flex-col lg:flex-row lg:h-screen hero-frame">
+      <!-- <video
+          autoplay
+          loop
+          muted
+          class="w-full h-full object-cover"
+          src="assets/videos/hero-video.mp4"
+        ></video> -->
+
+      <div class="w-full lg:w-[40%] relative lg:h-full">
+        <div class="px-6 pt-[150px] pb-20 sm:px-10 sm:pt-[170px] sm:pb-24 lg:px-15 lg:py-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2">
+          <span
+            class="mb-3 inline-block px-3 py-1.5 rounded-[30px] bg-secondary/10 text-secondary text-[11px] font-medium uppercase tracking-[0.18em]">
+            Glacia Ladies Salon
+          </span>
+
+          <h1
+            class="max-w-[520px] text-[40px] sm:text-[52px] md:text-[64px] lg:text-[76px] font-medium leading-[0.95] tracking-[-0.04em]">
+            Beauty, Made
+            <br />
+            For You.
+          </h1>
+
+          <p class="mt-6 max-w-[440px] text-sm leading-6 text-black/60">
+            A beauty destination where every detail is considered. From
+            signature hair and makeup to refined beauty and nail services, we
+            create experiences that feel personal, effortless, and beautifully
+            yours.
+          </p>
+
+          <a href="#services"
+            style="background: linear-gradient(21.8deg, #e7bf88 14.29%, #fff2cd 43.8%, #e7bf88 54.46%, #ffdd9d 62.82%, #e7bf88 85.71%);"
+            class="mt-6 inline-block rounded-full text-neutral-dark px-6 py-3.5 text-sm font-medium tracking-wide transition-opacity hover:opacity-80">
+            EXPLORE SERVICES
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-[60%] h-[60vh] sm:h-[70vh] lg:h-full">
+        <!-- <img class="w-full h-full object-cover" src="https://images.prismic.io/gielly-green/aRR8P7pReVYa4YO4_gielly-green-ourethos_cover.jpg?auto=format,compress?auto=compress,format" alt=""> -->
+
+        <video autoplay loop muted playsinline class="w-full h-full object-cover"
+          src="assets/videos/hero-video.mp4"></video>
+      </div>
+    </div>
+    <div class="main-content">
+      <section id="about" class="about-us bg-white">
+        <div class="container py-20 sm:py-28 lg:py-[240px]">
+          <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-10 lg:gap-[70px]">
+            <img class="w-full rounded-t-[200px] lg:rounded-t-[800px] lg:-mt-[100px]"
+              src="assets/images/about-portrait-left.webp" alt="" />
+
+            <div class="text-center flex gap-10 flex-col items-center">
+              <div>
+                <h2
+                  class="font-creative justify-center relative opacity-[0.15] flex -mb-[20px] sm:-mb-[30px] lg:-mb-[45px] text-[38px] sm:text-[56px] lg:text-[78px] text-neutral-dark leading-[0.9]">
+                  Our Story
+                </h2>
+
+                <h2
+                  class="text-[32px] font-primary text-center sm:text-[44px] lg:text-[60px] leading-none text-neutral-dark">
+                 Beauty, Beautifully Done
+                </h2>
+              </div>
+              <p class="max-w-[420px] mx-auto text-[16px] leading-[26px] text-neutral-dark/70">
+                Founded by Sheeba Komalan, a professional makeup artist,
+                Glacia Ladies Salon has grown into a trusted name for hair,
+                beauty, and nails across Kharghar and CBD Belapur. Every
+                visit is guided by her hands-on expertise from everyday
+                grooming to full bridal glam.
+              </p>
+
+             
+
+              <button
+                class="rounded-full bg-primary text-white px-8 py-3.5 text-sm font-medium tracking-wide transition-all hover:bg-neutral-dark">
+                KNOW MORE
+              </button>
+            </div>
+
+            <img class="w-full img-clip-path lg:-mb-[100px]"
+              src="assets/images/about-portrait-right.webp" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="service-section bg-primary py-16 sm:py-24 lg:py-[140px]">
+        <div class="container mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+          <div
+            class="section-heading max-w-[962px] mx-auto text-center flex flex-col items-center space-y-4 sm:space-y-6">
+            <span
+              class="inline-block text-[13px] sm:text-[16px] text-secondary leading-[16px] uppercase py-1 px-2 rounded-[6px]">OUR
+              SERVICES</span>
+            <h2
+              class="font-creative relative opacity-[0.15] flex -mb-[20px] sm:-mb-[30px] lg:-mb-[45px] text-[38px] sm:text-[56px] lg:text-[78px] text-neutral-light leading-[0.9]">
+              Come, Relax and Enjoy
+            </h2>
+
+            <h2 class="font-primary text-center text-neutral-light text-[40px] leading-[48px]">
+              <span
+                class="text-[32px] sm:text-[44px] lg:text-[60px] leading-[1.15] sm:leading-[1.15] lg:leading-[72px]">
+                Hair. Beauty. Nails.
+              </span>
+            </h2>
+
+            <p
+              class="max-w-[560px] mx-auto px-2 sm:px-[30px] text-[15px] sm:text-[16px] lg:text-[18px] font-normal text-neutral-light/70 leading-[26px] sm:leading-[28px] lg:leading-[24px]">
+              Signature services crafted by Sheeba Komalan and her team 
+              tailored to you, from everyday looks to bridal glam.
+            </p>
+          </div>
+          <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div
+              class="group relative h-[320px] sm:h-[360px] lg:h-[400px] rounded-[12px] overflow-hidden bg-neutral-light">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="assets/images/service-nails.webp"
+                alt="Nail care services at Glacia Ladies Salon" />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/10 to-transparent">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
+                <h3 class="font-primary text-neutral-light text-[22px] leading-none">
+                  Nails
+                </h3>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-[320px] sm:h-[360px] lg:h-[400px] rounded-[12px] overflow-hidden bg-neutral-light">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="assets/images/service-hair.webp"
+                alt="Hair services at Glacia Ladies Salon" />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/10 to-transparent">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
+                <h3 class="font-primary text-neutral-light text-[22px] leading-none">
+                  Hair
+                </h3>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-[320px] sm:h-[360px] lg:h-[400px] rounded-[12px] overflow-hidden bg-neutral-light">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="assets/images/service-beauty.webp"
+                alt="Beauty services at Glacia Ladies Salon" />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/10 to-transparent">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
+                <h3 class="font-primary text-neutral-light text-[22px] leading-none">
+                  Beauty
+                </h3>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-[320px] sm:h-[360px] lg:h-[400px] rounded-[12px] overflow-hidden bg-neutral-light">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="assets/images/service-bridal.webp"
+                alt="Bridal makeup artistry at Glacia Ladies Salon" />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-dark/80 via-neutral-dark/10 to-transparent">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
+                <h3 class="font-primary text-neutral-light text-[22px] leading-none">
+                  MakeUp Artist
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="video-section bg-neutral-light">
+        <div class="container py-20 sm:py-28 lg:py-[160px]">
+          <div
+            class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 sm:gap-4 mb-8 lg:mb-12">
+            <div>
+              <h2 class="font-primary text-neutral-dark text-[36px] sm:text-[46px] lg:text-[56px] leading-tight">
+                Client Stories
+              </h2>
+              <p class="text-sm sm:text-base text-neutral-dark/60 mt-2">Real transformations, real stories that keep them coming back</p>
+            </div>
+            <a
+              href="https://www.instagram.com/glacialadiessalon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="background: linear-gradient(21.8deg, #e7bf88 14.29%, #fff2cd 43.8%, #e7bf88 54.46%, #ffdd9d 62.82%, #e7bf88 85.71%);"
+              class="w-full sm:w-auto shrink-0 inline-flex items-center justify-center rounded-full text-neutral-dark text-sm sm:text-base font-semibold px-6 py-3 sm:px-8 sm:py-4 tracking-wide transition-opacity hover:opacity-90 shadow-lg">
+              View on Instagram
+            </a>
+          </div>
+          <div>
+            <div class="flex overflow-x-auto hide-scrollbar gap-3 pb-2 sm:pb-0">
+
+               <div class="relative flex flex-col items-center w-52 sm:w-64 lg:w-72 flex-shrink-0 cursor-pointer">
+            <div class="relative aspect-[9/16] w-full rounded-lg overflow-hidden"><video
+                class="w-full h-full object-cover" muted   autoplay="" loop="" playsinline="">
+                <source
+                  src="assets/videos/reel-05.mp4"
+                  type="video/mp4">
+              </video>
+              <div class="absolute top-2 right-2 z-10 flex flex-col gap-1.5"><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-share2 lucide-share-2 text-white" aria-hidden="true">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg></button><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  aria-label="Open fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-zoom-in text-white" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="11" x2="11" y1="8" y2="14"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                  </svg></button></div>
+              <div
+                class="absolute bottom-2 left-2 right-2 z-10 bg-gradient-to-b from-gray-800/95 via-gray-900/95 to-black/95 rounded-2xl p-2.5 backdrop-blur-md shadow-xl border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                  <div class="w-9 h-9 bg-white rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src="assets/images/category-hairtreatment.webp"
+                      alt="Hair Treatment" class="w-full h-full object-contain"></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white text-[12px] font-semibold leading-tight line-clamp-1">Hair Treatment</h3>
+                    <p class="text-white/90 text-[11px] font-bold leading-tight mt-1 truncate">▶ Watch Reel</p>
+                  </div>
+                </div><button
+                  class="w-full bg-gradient-to-br from-primary to-neutral-dark hover:brightness-110 text-white text-[13px] py-2 rounded-lg font-semibold transition-all shadow-lg shadow-primary/40">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center w-52 sm:w-64 lg:w-72 flex-shrink-0 cursor-pointer">
+            <div class="relative aspect-[9/16] w-full rounded-lg overflow-hidden"><video
+                class="w-full h-full object-cover" muted   autoplay="" loop="" playsinline="">
+                <source
+                  src="assets/videos/reel-06.mov"
+                  type="video/mp4">
+              </video>
+              <div class="absolute top-2 right-2 z-10 flex flex-col gap-1.5"><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-share2 lucide-share-2 text-white" aria-hidden="true">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg></button><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  aria-label="Open fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-zoom-in text-white" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="11" x2="11" y1="8" y2="14"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                  </svg></button></div>
+              <div
+                class="absolute bottom-2 left-2 right-2 z-10 bg-gradient-to-b from-gray-800/95 via-gray-900/95 to-black/95 rounded-2xl p-2.5 backdrop-blur-md shadow-xl border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                  <div class="w-9 h-9 bg-white rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src="assets/images/category-hairtreatment.webp"
+                      alt="Hair Treatment" class="w-full h-full object-contain"></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white text-[12px] font-semibold leading-tight line-clamp-1">Hair Treatment</h3>
+                    <p class="text-white/90 text-[11px] font-bold leading-tight mt-1 truncate">▶ Watch Reel</p>
+                  </div>
+                </div><button
+                  class="w-full bg-gradient-to-br from-primary to-neutral-dark hover:brightness-110 text-white text-[13px] py-2 rounded-lg font-semibold transition-all shadow-lg shadow-primary/40">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center w-52 sm:w-64 lg:w-72 flex-shrink-0 cursor-pointer">
+            <div class="relative aspect-[9/16] w-full rounded-lg overflow-hidden"><video
+                class="w-full h-full object-cover" muted   autoplay="" loop="" playsinline="">
+                <source
+                  src="assets/videos/reel-01.mp4"
+                  type="video/mp4">
+              </video>
+              <div class="absolute top-2 right-2 z-10 flex flex-col gap-1.5"><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-share2 lucide-share-2 text-white" aria-hidden="true">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg></button><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  aria-label="Open fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-zoom-in text-white" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="11" x2="11" y1="8" y2="14"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                  </svg></button></div>
+              <div
+                class="absolute bottom-2 left-2 right-2 z-10 bg-gradient-to-b from-gray-800/95 via-gray-900/95 to-black/95 rounded-2xl p-2.5 backdrop-blur-md shadow-xl border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                  <div class="w-9 h-9 bg-white rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src="assets/images/category-haircut.webp"
+                      alt="Hair Cut &amp; Styling" class="w-full h-full object-contain"></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white text-[12px] font-semibold leading-tight line-clamp-1">Hair Cut &amp; Styling
+                    </h3>
+                    <p class="text-white/90 text-[11px] font-bold leading-tight mt-1 truncate">▶ Watch Reel</p>
+                  </div>
+                </div><button
+                  class="w-full bg-gradient-to-br from-primary to-neutral-dark hover:brightness-110 text-white text-[13px] py-2 rounded-lg font-semibold transition-all shadow-lg shadow-primary/40">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center w-52 sm:w-64 lg:w-72 flex-shrink-0 cursor-pointer">
+            <div class="relative aspect-[9/16] w-full rounded-lg overflow-hidden"><video
+                class="w-full h-full object-cover" muted   autoplay="" loop="" playsinline="">
+                <source
+                  src="assets/videos/reel-02.mp4"
+                  type="video/mp4">
+              </video>
+              <div class="absolute top-2 right-2 z-10 flex flex-col gap-1.5"><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-share2 lucide-share-2 text-white" aria-hidden="true">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg></button><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  aria-label="Open fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-zoom-in text-white" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="11" x2="11" y1="8" y2="14"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                  </svg></button></div>
+              <div
+                class="absolute bottom-2 left-2 right-2 z-10 bg-gradient-to-b from-gray-800/95 via-gray-900/95 to-black/95 rounded-2xl p-2.5 backdrop-blur-md shadow-xl border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                  <div class="w-9 h-9 bg-white rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src="assets/images/category-haircolour.webp"
+                      alt="Hair Colour" class="w-full h-full object-contain"></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white text-[12px] font-semibold leading-tight line-clamp-1">Hair Colour</h3>
+                    <p class="text-white/90 text-[11px] font-bold leading-tight mt-1 truncate">▶ Watch Reel</p>
+                  </div>
+                </div><button
+                  class="w-full bg-gradient-to-br from-primary to-neutral-dark hover:brightness-110 text-white text-[13px] py-2 rounded-lg font-semibold transition-all shadow-lg shadow-primary/40">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center w-52 sm:w-64 lg:w-72 flex-shrink-0 cursor-pointer">
+            <div class="relative aspect-[9/16] w-full rounded-lg overflow-hidden"><video
+                class="w-full h-full object-cover" muted   autoplay="" loop="" playsinline="">
+                <source
+                  src="assets/videos/reel-03.mp4"
+                  type="video/mp4">
+              </video>
+              <div class="absolute top-2 right-2 z-10 flex flex-col gap-1.5"><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-share2 lucide-share-2 text-white" aria-hidden="true">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg></button><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  aria-label="Open fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-zoom-in text-white" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="11" x2="11" y1="8" y2="14"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                  </svg></button></div>
+              <div
+                class="absolute bottom-2 left-2 right-2 z-10 bg-gradient-to-b from-gray-800/95 via-gray-900/95 to-black/95 rounded-2xl p-2.5 backdrop-blur-md shadow-xl border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                  <div class="w-9 h-9 bg-white rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src="assets/images/category-haircolour.webp"
+                      alt="Hair Colour" class="w-full h-full object-contain"></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white text-[12px] font-semibold leading-tight line-clamp-1">Hair Colour</h3>
+                    <p class="text-white/90 text-[11px] font-bold leading-tight mt-1 truncate">▶ Watch Reel</p>
+                  </div>
+                </div><button
+                  class="w-full bg-gradient-to-br from-primary to-neutral-dark hover:brightness-110 text-white text-[13px] py-2 rounded-lg font-semibold transition-all shadow-lg shadow-primary/40">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center w-52 sm:w-64 lg:w-72 flex-shrink-0 cursor-pointer">
+            <div class="relative aspect-[9/16] w-full rounded-lg overflow-hidden"><video
+                class="w-full h-full object-cover" muted   autoplay="" loop="" playsinline="">
+                <source
+                  src="assets/videos/reel-04.mp4"
+                  type="video/mp4">
+              </video>
+              <div class="absolute top-2 right-2 z-10 flex flex-col gap-1.5"><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-share2 lucide-share-2 text-white" aria-hidden="true">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg></button><button
+                  class="bg-black/60 rounded-full p-2 backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  aria-label="Open fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-zoom-in text-white" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="11" x2="11" y1="8" y2="14"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                  </svg></button></div>
+              <div
+                class="absolute bottom-2 left-2 right-2 z-10 bg-gradient-to-b from-gray-800/95 via-gray-900/95 to-black/95 rounded-2xl p-2.5 backdrop-blur-md shadow-xl border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                  <div class="w-9 h-9 bg-white rounded-md flex items-center justify-center shrink-0 overflow-hidden">
+                    <img
+                      src="assets/images/category-hairspa.webp"
+                      alt="Hair Spa" class="w-full h-full object-contain"></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white text-[12px] font-semibold leading-tight line-clamp-1">Hair Spa</h3>
+                    <p class="text-white/90 text-[11px] font-bold leading-tight mt-1 truncate">▶ Watch Reel</p>
+                  </div>
+                </div><button
+                  class="w-full bg-gradient-to-br from-primary to-neutral-dark hover:brightness-110 text-white text-[13px] py-2 rounded-lg font-semibold transition-all shadow-lg shadow-primary/40">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+         
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-neutral-light overflow-hidden">
+        <div
+          class="relative py-10 sm:py-14 lg:py-[80px] w-full h-auto lg:h-[900px] after:content-[''] after:absolute after:top-0 after:left-0 after:h-[100%] after:block after:w-full after:bg-[url('assets/images/wedding-bg.webp')] space-y-4 md:space-y-0 after:bg-no-repeat after:bg-center after:bg-contain">
+          <div
+            class="section-heading max-w-[962px] mx-auto text-center flex flex-col items-center space-y-4 sm:space-y-6">
+            <h2 class="font-primary text-center text-black text-[40px] leading-[48px]">
+              <span
+                class="text-[32px] sm:text-[44px] lg:text-[60px] leading-[1.15] sm:leading-[1.15] lg:leading-[72px]">
+                Style for the big day
+              </span>
+            </h2>
+
+            <p
+              class="max-w-[560px] mx-auto px-2 sm:px-[30px] text-[15px] sm:text-[16px] lg:text-[18px] font-normal text-black leading-[26px] sm:leading-[28px] lg:leading-[24px]">
+              From intimate ceremonies to grand celebrations, we create
+              timeless wedding looks tailored to every individual and every
+              moment.
+            </p>
+          </div>
+
+          <div
+            class="centered-slider py-[120px] mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden relative after:content-[''] after:absolute after:top-0 after:left-0 after:block after:w-full px-2.5 md:px-0 after:h-full after:bg-primary after:rounded-[0px] sm:after:top-[51px] sm:after:left-1/2 sm:after:h-[580px] sm:after:w-[72%] sm:after:mx-auto sm:after:-translate-x-1/2 sm:after:rounded-full">
+            <div class="slider center swiper-wrapper" id="swiper-wrapper-aa95281c1a949a3a" aria-live="off" style="
+                  transition-duration: 1500ms;
+                  transform: translate3d(-2080px, 0px, 0px);
+                ">
+              <div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 800px"
+                data-swiper-slide-index="4">
+                <div class="servies">
+                  <img src="assets/images/wedding-slide-5.webp" alt="" />
+
+                  <h3>Signature Wedding Styling</h3>
+                </div>
+              </div>
+              <div class="swiper-slide" role="group" aria-label="1 / 5" style="width: 800px"
+                data-swiper-slide-index="0">
+                <div class="servies">
+                  <img src="assets/images/wedding-slide-1.webp" alt="" />
+
+                  <h3>Bridal Elegance &amp; Grooming</h3>
+                </div>
+              </div>
+              <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 5" style="width: 800px"
+                data-swiper-slide-index="1">
+                <div class="servies">
+                  <img src="assets/images/wedding-slide-2.webp" alt="" />
+
+                  <h3>Groomed to Perfection</h3>
+                </div>
+              </div>
+              <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 5" style="width: 800px"
+                data-swiper-slide-index="2">
+                <div class="servies">
+                  <img src="assets/images/wedding-slide-3.webp" alt="" />
+
+                  <h3>Elite Groom Styling</h3>
+                </div>
+              </div>
+              <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 5" style="width: 800px"
+                data-swiper-slide-index="3">
+                <div class="servies">
+                  <img src="assets/images/wedding-slide-4.webp" alt="" />
+
+                  <h3>Bridal Glam, Perfected</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide">
+              <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.6667 1L34.3333 7.66667M34.3333 7.66667L27.6667 14.3333M34.3333 7.66667H1"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide">
+              <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.66537 1L0.998699 7.66667M0.998699 7.66667L7.66537 14.3333M0.998699 7.66667H34.332"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="why-features bg-neutral-light py-16 sm:py-24 lg:py-[140px] overflow-hidden">
+        <div class="container mx-auto">
+          <div class="text-center mb-14 lg:mb-20 flex flex-col items-center space-y-4 sm:space-y-6">
+            <span
+              class="inline-block text-[13px] sm:text-[16px] text-secondary leading-[16px] uppercase py-1 px-2 rounded-[6px]">WHY
+              CHOOSE US</span>
+            <h2 class="font-primary text-neutral-dark text-[36px] sm:text-[46px] lg:text-[56px] leading-tight">
+              Our Signature Features
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-14 items-center">
+            <div class="space-y-14 lg:space-y-20 col-span-4">
+              <div
+                class="flex flex-col text-center lg:flex-row-reverse lg:text-right items-center lg:items-start gap-4">
+                <div
+                  class="w-14 h-14 shrink-0 rounded-full border border-primary/30 flex items-center justify-center text-primary text-2xl">
+                  <i class="ri-scissors-cut-line"></i>
+                </div>
+                <div>
+                  <h3 class="font-primary text-neutral-dark text-[22px] sm:text-[24px] leading-tight">
+                    Expert Hair Styling
+                  </h3>
+                  <p class="mt-3 text-[#6f6f6f] text-[15px] leading-7 max-w-[320px] lg:ml-auto">
+                    Personalised cuts, colour, and styling created to suit
+                    your look and lifestyle.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col text-center lg:flex-row-reverse lg:text-right items-center lg:items-start gap-4">
+                <div
+                  class="w-14 h-14 shrink-0 rounded-full border border-primary/30 flex items-center justify-center text-primary text-2xl">
+                  <i class="ri-sparkling-2-line"></i>
+                </div>
+                <div>
+                  <h3 class="font-primary text-neutral-dark text-[22px] sm:text-[24px] leading-tight">
+                    Professional Makeup
+                  </h3>
+                  <p class="mt-3 text-[#6f6f6f] text-[15px] leading-7 max-w-[320px] lg:ml-auto">
+                    Detailed nail care and elegant finishes for a polished
+                    look, every time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative w-full col-span-4 mx-auto aspect-[4/5]">
+              <div
+                class="relative w-full h-full before:content-[''] before:absolute before:inset-[15px] before:border-[2px] before:border-[#fff] before:rounded-full w-full h-full rounded-full overflow-hidden">
+                <img class="w-full h-full object-cover"
+                  src="assets/images/why-us-portrait.webp" alt="Glacia wellness studio" />
+              </div>
+            </div>
+
+            <div class="space-y-14 lg:space-y-20 col-span-4">
+              <div class="flex flex-col text-center lg:flex-row lg:text-left items-center lg:items-start gap-4">
+                <div
+                  class="w-14 h-14 shrink-0 rounded-full border border-primary/30 flex items-center justify-center text-primary text-2xl">
+                  <i class="ri-brush-4-line"></i>
+                </div>
+                <div>
+                  <h3 class="font-primary text-neutral-dark text-[22px] sm:text-[24px] leading-tight">
+                    Nail Care
+                  </h3>
+                  <p class="mt-3 text-[#6f6f6f] text-[15px] leading-7 max-w-[320px]">
+                    Beautiful makeup looks tailored to your features,
+                    occasion, and personal style.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col text-center lg:flex-row lg:text-left items-center lg:items-start gap-4">
+                <div
+                  class="w-14 h-14 shrink-0 rounded-full border border-primary/30 flex items-center justify-center text-primary text-2xl">
+                  <i class="ri-heart-3-line"></i>
+                </div>
+                <div>
+                  <h3 class="font-primary text-neutral-dark text-[22px] sm:text-[24px] leading-tight">
+                    Personalized Beauty
+                  </h3>
+                  <p class="mt-3 text-[#6f6f6f] text-[15px] leading-7 max-w-[320px]">
+                    Every treatment is tailored to your needs, preferences,
+                    and beauty goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stores" class="stores-section bg-white">
+        <div class="container py-16 sm:py-20 lg:py-24">
+          <div class="text-center mb-4">
+            <h2 class="font-primary text-neutral-dark text-[32px] sm:text-[40px] tracking-[0.05em] uppercase">
+              Our Stores
+            </h2>
+          </div>
+          <div class="w-16 h-[2px] bg-secondary mx-auto mb-12 lg:mb-16"></div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[760px] mx-auto">
+            <div class="group relative h-[420px] rounded-[4px] overflow-hidden">
+              <img src="assets/images/store-kharghar.webp" alt="Glacia Ladies Salon, Kharghar"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-neutral-dark/85 via-neutral-dark/20 to-transparent transition-opacity duration-300 group-hover:opacity-0">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-center transition-opacity duration-300 group-hover:opacity-0">
+                <h3 class="font-primary text-white text-[22px] sm:text-[24px] font-bold uppercase leading-tight">
+                  Kharghar</h3>
+                <p class="text-white/80 text-[12px] uppercase tracking-[0.15em] mt-1">Navi Mumbai</p>
+              </div>
+
+              <div
+                class="absolute inset-0 bg-primary flex flex-col items-center justify-center text-center px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="font-primary text-white text-[28px] leading-none">Visit</span>
+                <span class="text-secondary text-[12px] uppercase tracking-[0.2em] mt-2 mb-8">Kharghar</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Shop+no+7%2C+Millennium+Empire%2C+D+Mart+Rd%2C+Sector+15%2C+Kharghar%2C+Panvel%2C+Maharashtra+410210"
+                  target="_blank" rel="noopener noreferrer"
+                  class="inline-block bg-white text-neutral-dark text-[12px] font-semibold uppercase tracking-[0.15em] px-8 py-4 hover:bg-neutral-light transition-colors">
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <div class="group relative h-[420px] rounded-[4px] overflow-hidden">
+              <img src="assets/images/store-cbd-belapur.webp" alt="Glacia Ladies Salon, CBD Belapur"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-neutral-dark/85 via-neutral-dark/20 to-transparent transition-opacity duration-300 group-hover:opacity-0">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-center transition-opacity duration-300 group-hover:opacity-0">
+                <h3 class="font-primary text-white text-[22px] sm:text-[24px] font-bold uppercase leading-tight">CBD
+                  Belapur</h3>
+                <p class="text-white/80 text-[12px] uppercase tracking-[0.15em] mt-1">Navi Mumbai</p>
+              </div>
+
+              <div
+                class="absolute inset-0 bg-primary flex flex-col items-center justify-center text-center px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="font-primary text-white text-[28px] leading-none">Visit</span>
+                <span class="text-secondary text-[12px] uppercase tracking-[0.2em] mt-2 mb-8">CBD Belapur</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Shop+no+24%2C+F-type+Market%2C+Vasudev+Balwant+Phadke+Marg%2C+near+MSEB%2C+Sector+5%2C+CBD+Belapur%2C+Navi+Mumbai%2C+Maharashtra+400614"
+                  target="_blank" rel="noopener noreferrer"
+                  class="inline-block bg-white text-neutral-dark text-[12px] font-semibold uppercase tracking-[0.15em] px-8 py-4 hover:bg-neutral-light transition-colors">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="awards" class="awards-section bg-neutral-light">
+        <div class="container py-16 sm:py-20 lg:py-24">
+          <h2
+            class="text-center font-secondary text-[20px] sm:text-[26px] tracking-[0.2em] uppercase text-neutral-dark mb-14 lg:mb-20">
+            Awards and Recognitions
+          </h2>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 text-center">
+            <div>
+              <img src="assets/images/misc/trophy-icon.png" alt="Award laurel"
+                class="w-14 h-auto mx-auto mb-6" />
+              <p class="text-neutral-dark text-[16px] leading-snug">Best Bridal Makeup Studio</p>
+              <p class="text-neutral-dark text-[16px] leading-snug">Beauty &amp; Wellness Awards</p>
+              <p class="text-neutral-dark/50 text-[14px] mt-3">2024</p>
+            </div>
+
+            <div>
+              <img src="assets/images/misc/trophy-icon.png" alt="Award laurel"
+                class="w-14 h-auto mx-auto mb-6" />
+              <p class="text-neutral-dark text-[16px] leading-snug">Excellence in Hair Styling</p>
+              <p class="text-neutral-dark text-[16px] leading-snug">Navi Mumbai Salon Awards</p>
+              <p class="text-neutral-dark/50 text-[14px] mt-3">2023</p>
+            </div>
+
+            <div>
+              <img src="assets/images/misc/trophy-icon.png" alt="Award laurel"
+                class="w-14 h-auto mx-auto mb-6" />
+              <p class="text-neutral-dark text-[16px] leading-snug">Customer's Choice Salon</p>
+              <p class="text-neutral-dark text-[16px] leading-snug">Glam &amp; Grace Awards</p>
+              <p class="text-neutral-dark/50 text-[14px] mt-3">2022</p>
+            </div>
+
+            <div>
+              <img src="assets/images/misc/trophy-icon.png" alt="Award laurel"
+                class="w-14 h-auto mx-auto mb-6" />
+              <p class="text-neutral-dark text-[16px] leading-snug">Top Rated Beauty Salon</p>
+              <p class="text-neutral-dark text-[16px] leading-snug">Kharghar Business Circle</p>
+              <p class="text-neutral-dark/50 text-[14px] mt-3">2021</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="bg-neutral-dark text-neutral-light">
+      <div id="contact" class="footer-cta border-b border-neutral-light/10">
+        <div class="container py-14 lg:py-20">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <img src="./logo.png" alt="Glacia Ladies Salon" class="w-24 sm:w-28 object-contain" />
+
+            <div>
+              <p class="text-neutral-light/70 text-[16px] sm:text-[18px] leading-8 max-w-[560px]">
+                Have a question or want to plan your next visit? Send us a
+                message and our team will get back to you.
+              </p>
+
+              <form class="mt-10 space-y-8" onsubmit="return false;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div>
+                    <label class="sr-only" for="footer-name">Name</label>
+                    <input id="footer-name" type="text" placeholder="Your name"
+                      class="w-full bg-transparent border-b border-neutral-light/30 pb-3 text-[15px] text-neutral-light placeholder:text-neutral-light/50 focus:outline-none focus:border-secondary transition-colors" />
+                  </div>
+                  <div>
+                    <label class="sr-only" for="footer-phone">Phone number</label>
+                    <input id="footer-phone" type="tel" placeholder="Phone number"
+                      class="w-full bg-transparent border-b border-neutral-light/30 pb-3 text-[15px] text-neutral-light placeholder:text-neutral-light/50 focus:outline-none focus:border-secondary transition-colors" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="sr-only" for="footer-email">Email address</label>
+                  <input id="footer-email" type="email" placeholder="Your email address"
+                    class="w-full bg-transparent border-b border-neutral-light/30 pb-3 text-[15px] text-neutral-light placeholder:text-neutral-light/50 focus:outline-none focus:border-secondary transition-colors" />
+                </div>
+
+                <div class="flex items-end gap-4 border-b border-neutral-light/30 pb-3">
+                  <label class="sr-only" for="footer-message">Message</label>
+                  <input id="footer-message" type="text" placeholder="Tell us how we can help"
+                    class="flex-1 bg-transparent text-[15px] text-neutral-light placeholder:text-neutral-light/50 focus:outline-none" />
+                  <button type="submit"
+                    class="shrink-0 text-[12px] uppercase tracking-wide text-secondary font-semibold hover:text-white transition-colors">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+
+              <p class="mt-6 text-[13px] text-neutral-light/40">
+                By contacting us you are agreeing to our
+                <a href="#" class="underline hover:text-secondary transition-colors">Privacy Policy</a>.
+              </p>
+
+              <div class="flex items-center gap-5 mt-10">
+                <a href="https://www.instagram.com/glacialadiessalon/" target="_blank" rel="noopener noreferrer"
+                  aria-label="Glacia Ladies Salon on Instagram"
+                  class="text-neutral-light/70 hover:text-secondary transition-colors text-lg">
+                  <i class="ri-instagram-line"></i>
+                </a>
+                <a href="tel:+919892187656" aria-label="Call Glacia Ladies Salon"
+                  class="text-neutral-light/70 hover:text-secondary transition-colors text-lg">
+                  <i class="ri-phone-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="container pt-16 pb-12 lg:pt-24 lg:pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+            <div class="lg:col-span-6 flex gap-16">
+              <div>
+                <h4 class="text-[12px] text-neutral-light/50 uppercase tracking-[0.2em] mb-6">Salon</h4>
+                <ul class="space-y-4 text-[15px] text-neutral-light/80">
+                  <li><a href="#home" class="hover:text-secondary transition-colors">Home</a></li>
+                  <li><a href="#about" class="hover:text-secondary transition-colors">Our Story</a></li>
+                  <li><a href="#services" class="hover:text-secondary transition-colors">Services</a></li>
+                  <li><a href="#gallery" class="hover:text-secondary transition-colors">Gallery</a></li>
+                  <li><a href="#why-us" class="hover:text-secondary transition-colors">Why Choose Us</a></li>
+                  <li><a href="#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+                  <li><a href="tel:+919892187656" class="hover:text-secondary transition-colors">Book an Appointment</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="text-[12px] text-neutral-light/50 uppercase tracking-[0.2em] mb-6">Info</h4>
+                <ul class="space-y-4 text-[15px] text-neutral-light/80">
+                  <li><a href="tel:+919892187656" class="hover:text-secondary transition-colors">Contact Us</a></li>
+                  <li><a href="https://www.instagram.com/glacialadiessalon/" target="_blank" rel="noopener noreferrer"
+                      class="hover:text-secondary transition-colors">Instagram</a></li>
+                  <li><a href="#" class="hover:text-secondary transition-colors">Privacy Policy</a></li>
+                  <li><a href="#" class="hover:text-secondary transition-colors">Terms and Conditions</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-10">
+              <div>
+                <h4 class="font-primary text-[22px] leading-tight mb-1">Kharghar</h4>
+                <p class="text-neutral-light/60 text-[14px] mb-6">
+                  Shop no 7, Millennium Empire, D Mart Rd, Sector 15,
+                  Kharghar, Panvel, Maharashtra 410210
+                </p>
+
+                <a href="tel:+919892187656"
+                  class="inline-block mt-5 text-[12px] uppercase tracking-wide underline underline-offset-4 decoration-secondary/60 text-neutral-light hover:text-secondary transition-colors">
+                  Book an Appointment
+                </a>
+              </div>
+
+              <div>
+                <h4 class="font-primary text-[22px] leading-tight mb-1">CBD Belapur</h4>
+                <p class="text-neutral-light/60 text-[14px] mb-6">
+                  Shop no 24, F-type Market, Vasudev Balwant Phadke Marg,
+                  near MSEB, Sector 5, CBD Belapur, Navi Mumbai, Maharashtra
+                  400614
+                </p>
+
+                <a href="tel:+919892187656"
+                  class="inline-block mt-5 text-[12px] uppercase tracking-wide underline underline-offset-4 decoration-secondary/60 text-neutral-light hover:text-secondary transition-colors">
+                  Book an Appointment
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-sub border-t border-neutral-light/10">
+        <div
+          class="container py-6 flex items-center text-[13px] text-neutral-light/40">
+          <p>&copy; 2026 Glacia Ladies Salon. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1.8,
+      spaceBetween: 0,
+      centeredSlides: true,
+      loop: true,
+      speed: 1500,
+      dots: false,
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+
+        600: {
+          slidesPerView: 1,
+        },
+
+        1000: {
+          slidesPerView: 1.8,
+        },
+      },
+    });
+  </script>
+
+  <script>
+    (function () {
+      const nav = document.querySelector(".nav-frame");
+      const wrapper = document.getElementById("nav-wrapper");
+      if (!nav || !wrapper) return;
+
+      const SCROLL_THRESHOLD = 60;
+      const HIDE_THRESHOLD = 160;
+      let isScrolled = false;
+      let isHidden = false;
+      let lastScrollY = window.scrollY;
+
+      function setNavState(scrolled) {
+        if (scrolled === isScrolled) return;
+        isScrolled = scrolled;
+        nav.classList.toggle("nav-scrolled", scrolled);
+      }
+
+      function setHiddenState(hidden) {
+        if (hidden === isHidden) return;
+        isHidden = hidden;
+        wrapper.classList.toggle("nav-hidden", hidden);
+      }
+
+      function onScroll() {
+        const scrollY = window.scrollY;
+        setNavState(scrollY > SCROLL_THRESHOLD);
+
+        if (scrollY <= HIDE_THRESHOLD) {
+          setHiddenState(false);
+        } else if (scrollY > lastScrollY) {
+          setHiddenState(true);
+        } else if (scrollY < lastScrollY) {
+          setHiddenState(false);
+        }
+
+        lastScrollY = scrollY;
+      }
+
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const toggleBtn = document.getElementById("menu-toggle");
+      const closeBtn = document.getElementById("menu-close");
+      const overlay = document.getElementById("menu-overlay");
+      if (!toggleBtn || !closeBtn || !overlay) return;
+
+      function openMenu() {
+        overlay.classList.add("menu-open");
+        overlay.setAttribute("aria-hidden", "false");
+        toggleBtn.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-locked");
+      }
+
+      function closeMenu() {
+        overlay.classList.remove("menu-open");
+        overlay.setAttribute("aria-hidden", "true");
+        toggleBtn.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-locked");
+      }
+
+      toggleBtn.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+
+      overlay.querySelectorAll(".menu-link").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && overlay.classList.contains("menu-open")) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+  <script>
+    (function () {
+      if (typeof gsap === "undefined") return;
+      gsap.registerPlugin(ScrollToPlugin);
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        const targetId = link.getAttribute("href");
+        if (targetId.length < 2) return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: target, offsetY: 100 },
+            ease: "power2.inOut",
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
